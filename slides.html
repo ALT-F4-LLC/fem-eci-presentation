@@ -1,0 +1,785 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{-webkit-tap-highlight-color:transparent;-webkit-appearance:none;appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{view-transition-name:__bespoke_marp_transition_osc__;background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{word-wrap:break-word;box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin;white-space:pre-wrap;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#\:\$p>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div#\:\$p>svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p>svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div#\:\$p>svg>foreignObject>section :is(h1,marp-h1){font-size:2em;margin:0.67em 0}div#\:\$p>svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p>svg>foreignObject>section{page-break-before:always;break-before:page}div#\:\$p>svg>foreignObject>section,div#\:\$p>svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#\:\$p>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p>svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+/*!
+ * Marp default theme.
+ *
+ * @theme default
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */div#\:\$p>svg>foreignObject>section{--color-prettylights-syntax-comment:#6e7781;--color-prettylights-syntax-constant:#0550ae;--color-prettylights-syntax-entity:#8250df;--color-prettylights-syntax-storage-modifier-import:#24292f;--color-prettylights-syntax-entity-tag:#116329;--color-prettylights-syntax-keyword:#cf222e;--color-prettylights-syntax-string:#0a3069;--color-prettylights-syntax-variable:#953800;--color-prettylights-syntax-brackethighlighter-unmatched:#82071e;--color-prettylights-syntax-invalid-illegal-text:#f6f8fa;--color-prettylights-syntax-invalid-illegal-bg:#82071e;--color-prettylights-syntax-carriage-return-text:#f6f8fa;--color-prettylights-syntax-carriage-return-bg:#cf222e;--color-prettylights-syntax-string-regexp:#116329;--color-prettylights-syntax-markup-list:#3b2300;--color-prettylights-syntax-markup-heading:#0550ae;--color-prettylights-syntax-markup-italic:#24292f;--color-prettylights-syntax-markup-bold:#24292f;--color-prettylights-syntax-markup-deleted-text:#82071e;--color-prettylights-syntax-markup-deleted-bg:#ffebe9;--color-prettylights-syntax-markup-inserted-text:#116329;--color-prettylights-syntax-markup-inserted-bg:#dafbe1;--color-prettylights-syntax-markup-changed-text:#953800;--color-prettylights-syntax-markup-changed-bg:#ffd8b5;--color-prettylights-syntax-markup-ignored-text:#eaeef2;--color-prettylights-syntax-markup-ignored-bg:#0550ae;--color-prettylights-syntax-meta-diff-range:#8250df;--color-prettylights-syntax-brackethighlighter-angle:#57606a;--color-prettylights-syntax-sublimelinter-gutter-mark:#8c959f;--color-prettylights-syntax-constant-other-reference-link:#0a3069;--color-fg-default:#24292f;--color-fg-muted:#57606a;--color-fg-subtle:#6e7781;--color-canvas-default:#fff;--color-canvas-subtle:#f6f8fa;--color-border-default:#d0d7de;--color-border-muted:#d8dee4;--color-neutral-muted:rgba(175,184,193,.2);--color-accent-fg:#0969da;--color-accent-emphasis:#0969da;--color-attention-subtle:#fff8c5;--color-danger-fg:#cf222e;color-scheme:light}div#\:\$p>svg>foreignObject>section:where(.invert){--color-prettylights-syntax-comment:#8b949e;--color-prettylights-syntax-constant:#79c0ff;--color-prettylights-syntax-entity:#d2a8ff;--color-prettylights-syntax-storage-modifier-import:#c9d1d9;--color-prettylights-syntax-entity-tag:#7ee787;--color-prettylights-syntax-keyword:#ff7b72;--color-prettylights-syntax-string:#a5d6ff;--color-prettylights-syntax-variable:#ffa657;--color-prettylights-syntax-brackethighlighter-unmatched:#f85149;--color-prettylights-syntax-invalid-illegal-text:#f0f6fc;--color-prettylights-syntax-invalid-illegal-bg:#8e1519;--color-prettylights-syntax-carriage-return-text:#f0f6fc;--color-prettylights-syntax-carriage-return-bg:#b62324;--color-prettylights-syntax-string-regexp:#7ee787;--color-prettylights-syntax-markup-list:#f2cc60;--color-prettylights-syntax-markup-heading:#1f6feb;--color-prettylights-syntax-markup-italic:#c9d1d9;--color-prettylights-syntax-markup-bold:#c9d1d9;--color-prettylights-syntax-markup-deleted-text:#ffdcd7;--color-prettylights-syntax-markup-deleted-bg:#67060c;--color-prettylights-syntax-markup-inserted-text:#aff5b4;--color-prettylights-syntax-markup-inserted-bg:#033a16;--color-prettylights-syntax-markup-changed-text:#ffdfb6;--color-prettylights-syntax-markup-changed-bg:#5a1e02;--color-prettylights-syntax-markup-ignored-text:#c9d1d9;--color-prettylights-syntax-markup-ignored-bg:#1158c7;--color-prettylights-syntax-meta-diff-range:#d2a8ff;--color-prettylights-syntax-brackethighlighter-angle:#8b949e;--color-prettylights-syntax-sublimelinter-gutter-mark:#484f58;--color-prettylights-syntax-constant-other-reference-link:#a5d6ff;--color-fg-default:#c9d1d9;--color-fg-muted:#8b949e;--color-fg-subtle:#6e7681;--color-canvas-default:#0d1117;--color-canvas-subtle:#161b22;--color-border-default:#30363d;--color-border-muted:#21262d;--color-neutral-muted:hsla(215,8%,47%,.4);--color-accent-fg:#58a6ff;--color-accent-emphasis:#1f6feb;--color-attention-subtle:rgba(187,128,9,.15);--color-danger-fg:#f85149;color-scheme:dark}div#\:\$p>svg>foreignObject>section{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;word-wrap:break-word;background-color:var(--color-canvas-default);color:var(--color-fg-default);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;line-height:1.5;margin:0}div#\:\$p>svg>foreignObject>section{--marpit-root-font-size:16px}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1):hover .anchor .octicon-link:before,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2):hover .anchor .octicon-link:before,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3):hover .anchor .octicon-link:before,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4):hover .anchor .octicon-link:before,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5):hover .anchor .octicon-link:before,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6):hover .anchor .octicon-link:before{background-color:currentColor;content:" ";display:inline-block;height:16px;-webkit-mask-image:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 0 0 1.06 1.06l1.25-1.25a2 2 0 1 1 2.83 2.83l-2.5 2.5a2 2 0 0 1-2.83 0 .75.75 0 0 0-1.06 1.06 3.5 3.5 0 0 0 4.95 0l2.5-2.5a3.5 3.5 0 0 0-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 0 1 0-2.83l2.5-2.5a2 2 0 0 1 2.83 0 .75.75 0 0 0 1.06-1.06 3.5 3.5 0 0 0-4.95 0l-2.5 2.5a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25a.75.75 0 0 0-1.06-1.06l-1.25 1.25a2 2 0 0 1-2.83 0z"/></svg>');mask-image:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 0 0 1.06 1.06l1.25-1.25a2 2 0 1 1 2.83 2.83l-2.5 2.5a2 2 0 0 1-2.83 0 .75.75 0 0 0-1.06 1.06 3.5 3.5 0 0 0 4.95 0l2.5-2.5a3.5 3.5 0 0 0-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 0 1 0-2.83l2.5-2.5a2 2 0 0 1 2.83 0 .75.75 0 0 0 1.06-1.06 3.5 3.5 0 0 0-4.95 0l-2.5 2.5a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25a.75.75 0 0 0-1.06-1.06l-1.25 1.25a2 2 0 0 1-2.83 0z"/></svg>');width:16px}div#\:\$p>svg>foreignObject>section details,div#\:\$p>svg>foreignObject>section figcaption,div#\:\$p>svg>foreignObject>section figure{display:block}div#\:\$p>svg>foreignObject>section summary{display:list-item}div#\:\$p>svg>foreignObject>section [hidden]{display:none!important}div#\:\$p>svg>foreignObject>section a{background-color:transparent;color:var(--color-accent-fg);text-decoration:none}div#\:\$p>svg>foreignObject>section abbr[title]{border-bottom:none;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}div#\:\$p>svg>foreignObject>section b,div#\:\$p>svg>foreignObject>section strong{font-weight:var(--base-text-weight-semibold,600)}div#\:\$p>svg>foreignObject>section dfn{font-style:italic}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1){border-bottom:1px solid var(--color-border-muted);font-size:2em;font-weight:var(--base-text-weight-semibold,600);margin:.67em 0;padding-bottom:.3em}div#\:\$p>svg>foreignObject>section mark{background-color:var(--color-attention-subtle);color:var(--color-fg-default)}div#\:\$p>svg>foreignObject>section small{font-size:90%}div#\:\$p>svg>foreignObject>section sub,div#\:\$p>svg>foreignObject>section sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}div#\:\$p>svg>foreignObject>section sub{bottom:-.25em}div#\:\$p>svg>foreignObject>section sup{top:-.5em}div#\:\$p>svg>foreignObject>section img{background-color:var(--color-canvas-default);border-style:none;box-sizing:content-box;max-width:100%}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre),div#\:\$p>svg>foreignObject>section code,div#\:\$p>svg>foreignObject>section kbd,div#\:\$p>svg>foreignObject>section samp{font-family:monospace;font-size:1em}div#\:\$p>svg>foreignObject>section figure{margin:1em 40px}div#\:\$p>svg>foreignObject>section hr{background:transparent;background-color:var(--color-border-default);border:0;box-sizing:content-box;height:.25em;margin:24px 0;overflow:hidden;padding:0}div#\:\$p>svg>foreignObject>section input{font:inherit;font-family:inherit;font-size:inherit;line-height:inherit;margin:0;overflow:visible}div#\:\$p>svg>foreignObject>section [type=button],div#\:\$p>svg>foreignObject>section [type=reset],div#\:\$p>svg>foreignObject>section [type=submit]{-webkit-appearance:button}div#\:\$p>svg>foreignObject>section [type=checkbox],div#\:\$p>svg>foreignObject>section [type=radio]{box-sizing:border-box;padding:0}div#\:\$p>svg>foreignObject>section [type=number]::-webkit-inner-spin-button,div#\:\$p>svg>foreignObject>section [type=number]::-webkit-outer-spin-button{height:auto}div#\:\$p>svg>foreignObject>section [type=search]::-webkit-search-cancel-button,div#\:\$p>svg>foreignObject>section [type=search]::-webkit-search-decoration{-webkit-appearance:none}div#\:\$p>svg>foreignObject>section ::-webkit-input-placeholder{color:inherit;opacity:.54}div#\:\$p>svg>foreignObject>section ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}div#\:\$p>svg>foreignObject>section a:hover{text-decoration:underline}div#\:\$p>svg>foreignObject>section ::-moz-placeholder{color:var(--color-fg-subtle);opacity:1}div#\:\$p>svg>foreignObject>section ::placeholder{color:var(--color-fg-subtle);opacity:1}div#\:\$p>svg>foreignObject>section hr:after,div#\:\$p>svg>foreignObject>section hr:before{content:"";display:table}div#\:\$p>svg>foreignObject>section hr:after{clear:both}div#\:\$p>svg>foreignObject>section table{border-collapse:collapse;border-spacing:0;display:block;max-width:100%;overflow:auto;width:-moz-max-content;width:max-content}div#\:\$p>svg>foreignObject>section td,div#\:\$p>svg>foreignObject>section th{padding:0}div#\:\$p>svg>foreignObject>section details summary{cursor:pointer}div#\:\$p>svg>foreignObject>section details:not([open])>:not(summary){display:none!important}div#\:\$p>svg>foreignObject>section [role=button]:focus,div#\:\$p>svg>foreignObject>section a:focus,div#\:\$p>svg>foreignObject>section input[type=checkbox]:focus,div#\:\$p>svg>foreignObject>section input[type=radio]:focus{box-shadow:none;outline:2px solid var(--color-accent-fg);outline-offset:-2px}div#\:\$p>svg>foreignObject>section [role=button]:focus:not(:focus-visible),div#\:\$p>svg>foreignObject>section a:focus:not(:focus-visible),div#\:\$p>svg>foreignObject>section input[type=checkbox]:focus:not(:focus-visible),div#\:\$p>svg>foreignObject>section input[type=radio]:focus:not(:focus-visible){outline:1px solid transparent}div#\:\$p>svg>foreignObject>section [role=button]:focus-visible,div#\:\$p>svg>foreignObject>section a:focus-visible,div#\:\$p>svg>foreignObject>section input[type=checkbox]:focus-visible,div#\:\$p>svg>foreignObject>section input[type=radio]:focus-visible{box-shadow:none;outline:2px solid var(--color-accent-fg);outline-offset:-2px}div#\:\$p>svg>foreignObject>section a:not([class]):focus,div#\:\$p>svg>foreignObject>section a:not([class]):focus-visible,div#\:\$p>svg>foreignObject>section input[type=checkbox]:focus,div#\:\$p>svg>foreignObject>section input[type=checkbox]:focus-visible,div#\:\$p>svg>foreignObject>section input[type=radio]:focus,div#\:\$p>svg>foreignObject>section input[type=radio]:focus-visible{outline-offset:0}div#\:\$p>svg>foreignObject>section kbd{background-color:var(--color-canvas-subtle);border-bottom-color:var(--color-neutral-muted);border:1px solid var(--color-neutral-muted);border-radius:6px;box-shadow:inset 0 -1px 0 var(--color-neutral-muted);color:var(--color-fg-default);display:inline-block;font:11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;line-height:10px;padding:3px 5px;vertical-align:middle}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1),div#\:\$p>svg>foreignObject>section :is(h2,marp-h2),div#\:\$p>svg>foreignObject>section :is(h3,marp-h3),div#\:\$p>svg>foreignObject>section :is(h4,marp-h4),div#\:\$p>svg>foreignObject>section :is(h5,marp-h5),div#\:\$p>svg>foreignObject>section :is(h6,marp-h6){font-weight:var(--base-text-weight-semibold,600);line-height:1.25;margin-bottom:16px;margin-top:24px}div#\:\$p>svg>foreignObject>section :is(h2,marp-h2){border-bottom:1px solid var(--color-border-muted);font-size:1.5em;padding-bottom:.3em}div#\:\$p>svg>foreignObject>section :is(h2,marp-h2),div#\:\$p>svg>foreignObject>section :is(h3,marp-h3){font-weight:var(--base-text-weight-semibold,600)}div#\:\$p>svg>foreignObject>section :is(h3,marp-h3){font-size:1.25em}div#\:\$p>svg>foreignObject>section :is(h4,marp-h4){font-size:1em}div#\:\$p>svg>foreignObject>section :is(h4,marp-h4),div#\:\$p>svg>foreignObject>section :is(h5,marp-h5){font-weight:var(--base-text-weight-semibold,600)}div#\:\$p>svg>foreignObject>section :is(h5,marp-h5){font-size:.875em}div#\:\$p>svg>foreignObject>section :is(h6,marp-h6){color:var(--color-fg-muted);font-size:.85em;font-weight:var(--base-text-weight-semibold,600)}div#\:\$p>svg>foreignObject>section p{margin-bottom:10px;margin-top:0}div#\:\$p>svg>foreignObject>section blockquote{border-left:.25em solid var(--color-border-default);color:var(--color-fg-muted);margin:0;padding:0 1em}div#\:\$p>svg>foreignObject>section ol,div#\:\$p>svg>foreignObject>section ul{margin-bottom:0;margin-top:0;padding-left:2em}div#\:\$p>svg>foreignObject>section ol ol,div#\:\$p>svg>foreignObject>section ul ol{list-style-type:lower-roman}div#\:\$p>svg>foreignObject>section ol ol ol,div#\:\$p>svg>foreignObject>section ol ul ol,div#\:\$p>svg>foreignObject>section ul ol ol,div#\:\$p>svg>foreignObject>section ul ul ol{list-style-type:lower-alpha}div#\:\$p>svg>foreignObject>section dd{margin-left:0}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre),div#\:\$p>svg>foreignObject>section code,div#\:\$p>svg>foreignObject>section samp,div#\:\$p>svg>foreignObject>section tt{font-family:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;font-size:12px}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre){word-wrap:normal;margin-bottom:0;margin-top:0}div#\:\$p>svg>foreignObject>section .octicon{fill:currentColor;display:inline-block;overflow:visible!important;vertical-align:text-bottom}div#\:\$p>svg>foreignObject>section input::-webkit-inner-spin-button,div#\:\$p>svg>foreignObject>section input::-webkit-outer-spin-button{-webkit-appearance:none;appearance:none;margin:0}div#\:\$p>svg>foreignObject>section:after,div#\:\$p>svg>foreignObject>section:before{
+  /* content:""; */display:table}div#\:\$p>svg>foreignObject>section:after{clear:both}div#\:\$p>svg>foreignObject>section>:first-child{margin-top:0!important}div#\:\$p>svg>foreignObject>section>:last-child{margin-bottom:0!important}div#\:\$p>svg>foreignObject>section a:not([href]){color:inherit;text-decoration:none}div#\:\$p>svg>foreignObject>section .absent{color:var(--color-danger-fg)}div#\:\$p>svg>foreignObject>section .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}div#\:\$p>svg>foreignObject>section .anchor:focus{outline:none}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre),div#\:\$p>svg>foreignObject>section blockquote,div#\:\$p>svg>foreignObject>section details,div#\:\$p>svg>foreignObject>section dl,div#\:\$p>svg>foreignObject>section ol,div#\:\$p>svg>foreignObject>section p,div#\:\$p>svg>foreignObject>section table,div#\:\$p>svg>foreignObject>section ul{margin-bottom:16px;margin-top:0}div#\:\$p>svg>foreignObject>section blockquote>:first-child{margin-top:0}div#\:\$p>svg>foreignObject>section blockquote>:last-child{margin-bottom:0}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1) .octicon-link,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2) .octicon-link,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3) .octicon-link,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4) .octicon-link,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5) .octicon-link,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6) .octicon-link{color:var(--color-fg-default);vertical-align:middle;visibility:hidden}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1):hover .anchor,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2):hover .anchor,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3):hover .anchor,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4):hover .anchor,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5):hover .anchor,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6):hover .anchor{text-decoration:none}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1):hover .anchor .octicon-link,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2):hover .anchor .octicon-link,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3):hover .anchor .octicon-link,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4):hover .anchor .octicon-link,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5):hover .anchor .octicon-link,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6):hover .anchor .octicon-link{visibility:visible}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1) code,div#\:\$p>svg>foreignObject>section :is(h1,marp-h1) tt,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2) code,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2) tt,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3) code,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3) tt,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4) code,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4) tt,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5) code,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5) tt,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6) code,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6) tt{font-size:inherit;padding:0 .2em}div#\:\$p>svg>foreignObject>section summary :is(h1,marp-h1),div#\:\$p>svg>foreignObject>section summary :is(h2,marp-h2),div#\:\$p>svg>foreignObject>section summary :is(h3,marp-h3),div#\:\$p>svg>foreignObject>section summary :is(h4,marp-h4),div#\:\$p>svg>foreignObject>section summary :is(h5,marp-h5),div#\:\$p>svg>foreignObject>section summary :is(h6,marp-h6){display:inline-block}div#\:\$p>svg>foreignObject>section summary :is(h1,marp-h1) .anchor,div#\:\$p>svg>foreignObject>section summary :is(h2,marp-h2) .anchor,div#\:\$p>svg>foreignObject>section summary :is(h3,marp-h3) .anchor,div#\:\$p>svg>foreignObject>section summary :is(h4,marp-h4) .anchor,div#\:\$p>svg>foreignObject>section summary :is(h5,marp-h5) .anchor,div#\:\$p>svg>foreignObject>section summary :is(h6,marp-h6) .anchor{margin-left:-40px}div#\:\$p>svg>foreignObject>section summary :is(h1,marp-h1),div#\:\$p>svg>foreignObject>section summary :is(h2,marp-h2){border-bottom:0;padding-bottom:0}div#\:\$p>svg>foreignObject>section ol.no-list,div#\:\$p>svg>foreignObject>section ul.no-list{list-style-type:none;padding:0}div#\:\$p>svg>foreignObject>section ol[type=a]{list-style-type:lower-alpha}div#\:\$p>svg>foreignObject>section ol[type=A]{list-style-type:upper-alpha}div#\:\$p>svg>foreignObject>section ol[type=i]{list-style-type:lower-roman}div#\:\$p>svg>foreignObject>section ol[type=I]{list-style-type:upper-roman}div#\:\$p>svg>foreignObject>section div>ol:not([type]),div#\:\$p>svg>foreignObject>section ol[type="1"]{list-style-type:decimal}div#\:\$p>svg>foreignObject>section ol ol,div#\:\$p>svg>foreignObject>section ol ul,div#\:\$p>svg>foreignObject>section ul ol,div#\:\$p>svg>foreignObject>section ul ul{margin-bottom:0;margin-top:0}div#\:\$p>svg>foreignObject>section li>p{margin-top:16px}div#\:\$p>svg>foreignObject>section li+li{margin-top:.25em}div#\:\$p>svg>foreignObject>section dl{padding:0}div#\:\$p>svg>foreignObject>section dl dt{font-size:1em;font-style:italic;font-weight:var(--base-text-weight-semibold,600);margin-top:16px;padding:0}div#\:\$p>svg>foreignObject>section dl dd{margin-bottom:16px;padding:0 16px}div#\:\$p>svg>foreignObject>section table th{font-weight:var(--base-text-weight-semibold,600)}div#\:\$p>svg>foreignObject>section table td,div#\:\$p>svg>foreignObject>section table th{border:1px solid var(--color-border-default);padding:6px 13px}div#\:\$p>svg>foreignObject>section table tr{background-color:var(--color-canvas-default);border-top:1px solid var(--color-border-muted)}div#\:\$p>svg>foreignObject>section table tr:nth-child(2n){background-color:var(--color-canvas-subtle)}div#\:\$p>svg>foreignObject>section table img{background-color:transparent}div#\:\$p>svg>foreignObject>section img[align=right]{padding-left:20px}div#\:\$p>svg>foreignObject>section img[align=left]{padding-right:20px}div#\:\$p>svg>foreignObject>section .emoji{background-color:transparent;max-width:none;vertical-align:text-top}div#\:\$p>svg>foreignObject>section :is(span,marp-span).frame,div#\:\$p>svg>foreignObject>section :is(span,marp-span).frame>:is(span,marp-span){display:block;overflow:hidden}div#\:\$p>svg>foreignObject>section :is(span,marp-span).frame>:is(span,marp-span){border:1px solid var(--color-border-default);float:left;margin:13px 0 0;padding:7px;width:auto}div#\:\$p>svg>foreignObject>section :is(span,marp-span).frame :is(span,marp-span) img{display:block;float:left}div#\:\$p>svg>foreignObject>section :is(span,marp-span).frame :is(span,marp-span) :is(span,marp-span){clear:both;color:var(--color-fg-default);display:block;padding:5px 0 0}div#\:\$p>svg>foreignObject>section :is(span,marp-span).align-center{clear:both;display:block;overflow:hidden}div#\:\$p>svg>foreignObject>section :is(span,marp-span).align-center>:is(span,marp-span){display:block;margin:13px auto 0;overflow:hidden;text-align:center}div#\:\$p>svg>foreignObject>section :is(span,marp-span).align-center :is(span,marp-span) img{margin:0 auto;text-align:center}div#\:\$p>svg>foreignObject>section :is(span,marp-span).align-right{clear:both;display:block;overflow:hidden}div#\:\$p>svg>foreignObject>section :is(span,marp-span).align-right>:is(span,marp-span){display:block;margin:13px 0 0;overflow:hidden;text-align:right}div#\:\$p>svg>foreignObject>section :is(span,marp-span).align-right :is(span,marp-span) img{margin:0;text-align:right}div#\:\$p>svg>foreignObject>section :is(span,marp-span).float-left{display:block;float:left;margin-right:13px;overflow:hidden}div#\:\$p>svg>foreignObject>section :is(span,marp-span).float-left :is(span,marp-span){margin:13px 0 0}div#\:\$p>svg>foreignObject>section :is(span,marp-span).float-right{display:block;float:right;margin-left:13px;overflow:hidden}div#\:\$p>svg>foreignObject>section :is(span,marp-span).float-right>:is(span,marp-span){display:block;margin:13px auto 0;overflow:hidden;text-align:right}div#\:\$p>svg>foreignObject>section code,div#\:\$p>svg>foreignObject>section tt{background-color:var(--color-neutral-muted);border-radius:6px;font-size:85%;margin:0;padding:.2em .4em;white-space:break-spaces}div#\:\$p>svg>foreignObject>section code br,div#\:\$p>svg>foreignObject>section tt br{display:none}div#\:\$p>svg>foreignObject>section del code{text-decoration:inherit}div#\:\$p>svg>foreignObject>section samp{font-size:85%}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) code{font-size:100%}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre)>code{background:transparent;border:0;margin:0;padding:0;white-space:pre;word-break:normal}div#\:\$p>svg>foreignObject>section .highlight{margin-bottom:16px}div#\:\$p>svg>foreignObject>section .highlight :is(pre,marp-pre){margin-bottom:0;word-break:normal}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre){background-color:var(--color-canvas-subtle);border-radius:6px;font-size:85%;line-height:1.45;overflow:auto;padding:16px}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) code,div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) tt{word-wrap:normal;background-color:transparent;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}div#\:\$p>svg>foreignObject>section .csv-data td,div#\:\$p>svg>foreignObject>section .csv-data th{font-size:12px;line-height:1;overflow:hidden;padding:5px;text-align:left;white-space:nowrap}div#\:\$p>svg>foreignObject>section .csv-data .blob-num{background:var(--color-canvas-default);border:0;padding:10px 8px 9px;text-align:right}div#\:\$p>svg>foreignObject>section .csv-data tr{border-top:0}div#\:\$p>svg>foreignObject>section .csv-data th{background:var(--color-canvas-subtle);border-top:0;font-weight:var(--base-text-weight-semibold,600)}div#\:\$p>svg>foreignObject>section [data-footnote-ref]:before{content:"["}div#\:\$p>svg>foreignObject>section [data-footnote-ref]:after{content:"]"}div#\:\$p>svg>foreignObject>section .footnotes{border-top:1px solid var(--color-border-default);color:var(--color-fg-muted);font-size:12px}div#\:\$p>svg>foreignObject>section div#\:\$p>svg>foreignObject>section section.footnotes{--marpit-root-font-size:12px}div#\:\$p>svg>foreignObject>section .footnotes ol{padding-left:16px}div#\:\$p>svg>foreignObject>section .footnotes ol ul{display:inline-block;margin-top:16px;padding-left:16px}div#\:\$p>svg>foreignObject>section .footnotes li{position:relative}div#\:\$p>svg>foreignObject>section .footnotes li:target:before{border:2px solid var(--color-accent-emphasis);border-radius:6px;bottom:-8px;content:"";left:-24px;pointer-events:none;position:absolute;right:-8px;top:-8px}div#\:\$p>svg>foreignObject>section .footnotes li:target{color:var(--color-fg-default)}div#\:\$p>svg>foreignObject>section .footnotes .data-footnote-backref g-emoji{font-family:monospace}div#\:\$p>svg>foreignObject>section .pl-c{color:var(--color-prettylights-syntax-comment)}div#\:\$p>svg>foreignObject>section .pl-c1,div#\:\$p>svg>foreignObject>section .pl-s .pl-v{color:var(--color-prettylights-syntax-constant)}div#\:\$p>svg>foreignObject>section .pl-e,div#\:\$p>svg>foreignObject>section .pl-en{color:var(--color-prettylights-syntax-entity)}div#\:\$p>svg>foreignObject>section .pl-s .pl-s1,div#\:\$p>svg>foreignObject>section .pl-smi{color:var(--color-prettylights-syntax-storage-modifier-import)}div#\:\$p>svg>foreignObject>section .pl-ent{color:var(--color-prettylights-syntax-entity-tag)}div#\:\$p>svg>foreignObject>section .pl-k{color:var(--color-prettylights-syntax-keyword)}div#\:\$p>svg>foreignObject>section .pl-pds,div#\:\$p>svg>foreignObject>section .pl-s,div#\:\$p>svg>foreignObject>section .pl-s .pl-pse .pl-s1,div#\:\$p>svg>foreignObject>section .pl-sr,div#\:\$p>svg>foreignObject>section .pl-sr .pl-cce,div#\:\$p>svg>foreignObject>section .pl-sr .pl-sra,div#\:\$p>svg>foreignObject>section .pl-sr .pl-sre{color:var(--color-prettylights-syntax-string)}div#\:\$p>svg>foreignObject>section .pl-smw,div#\:\$p>svg>foreignObject>section .pl-v{color:var(--color-prettylights-syntax-variable)}div#\:\$p>svg>foreignObject>section .pl-bu{color:var(--color-prettylights-syntax-brackethighlighter-unmatched)}div#\:\$p>svg>foreignObject>section .pl-ii{background-color:var(--color-prettylights-syntax-invalid-illegal-bg);color:var(--color-prettylights-syntax-invalid-illegal-text)}div#\:\$p>svg>foreignObject>section .pl-c2{background-color:var(--color-prettylights-syntax-carriage-return-bg);color:var(--color-prettylights-syntax-carriage-return-text)}div#\:\$p>svg>foreignObject>section .pl-sr .pl-cce{color:var(--color-prettylights-syntax-string-regexp);font-weight:700}div#\:\$p>svg>foreignObject>section .pl-ml{color:var(--color-prettylights-syntax-markup-list)}div#\:\$p>svg>foreignObject>section .pl-mh,div#\:\$p>svg>foreignObject>section .pl-mh .pl-en,div#\:\$p>svg>foreignObject>section .pl-ms{color:var(--color-prettylights-syntax-markup-heading);font-weight:700}div#\:\$p>svg>foreignObject>section .pl-mi{color:var(--color-prettylights-syntax-markup-italic);font-style:italic}div#\:\$p>svg>foreignObject>section .pl-mb{color:var(--color-prettylights-syntax-markup-bold);font-weight:700}div#\:\$p>svg>foreignObject>section .pl-md{background-color:var(--color-prettylights-syntax-markup-deleted-bg);color:var(--color-prettylights-syntax-markup-deleted-text)}div#\:\$p>svg>foreignObject>section .pl-mi1{background-color:var(--color-prettylights-syntax-markup-inserted-bg);color:var(--color-prettylights-syntax-markup-inserted-text)}div#\:\$p>svg>foreignObject>section .pl-mc{background-color:var(--color-prettylights-syntax-markup-changed-bg);color:var(--color-prettylights-syntax-markup-changed-text)}div#\:\$p>svg>foreignObject>section .pl-mi2{background-color:var(--color-prettylights-syntax-markup-ignored-bg);color:var(--color-prettylights-syntax-markup-ignored-text)}div#\:\$p>svg>foreignObject>section .pl-mdr{color:var(--color-prettylights-syntax-meta-diff-range);font-weight:700}div#\:\$p>svg>foreignObject>section .pl-ba{color:var(--color-prettylights-syntax-brackethighlighter-angle)}div#\:\$p>svg>foreignObject>section .pl-sg{color:var(--color-prettylights-syntax-sublimelinter-gutter-mark)}div#\:\$p>svg>foreignObject>section .pl-corl{color:var(--color-prettylights-syntax-constant-other-reference-link);text-decoration:underline}div#\:\$p>svg>foreignObject>section g-emoji{display:inline-block;font-family:Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:1em;font-style:normal!important;font-weight:var(--base-text-weight-normal,400);line-height:1;min-width:1ch;vertical-align:-.075em}div#\:\$p>svg>foreignObject>section g-emoji img{height:1em;width:1em}div#\:\$p>svg>foreignObject>section .task-list-item{list-style-type:none}div#\:\$p>svg>foreignObject>section .task-list-item label{font-weight:var(--base-text-weight-normal,400)}div#\:\$p>svg>foreignObject>section .task-list-item.enabled label{cursor:pointer}div#\:\$p>svg>foreignObject>section .task-list-item+.task-list-item{margin-top:4px}div#\:\$p>svg>foreignObject>section .task-list-item .handle{display:none}div#\:\$p>svg>foreignObject>section .task-list-item-checkbox{margin:0 .2em .25em -1.4em;vertical-align:middle}div#\:\$p>svg>foreignObject>section .contains-task-list:dir(rtl) .task-list-item-checkbox{margin:0 -1.6em .25em .2em}div#\:\$p>svg>foreignObject>section .contains-task-list{position:relative}div#\:\$p>svg>foreignObject>section .contains-task-list:focus-within .task-list-item-convert-container,div#\:\$p>svg>foreignObject>section .contains-task-list:hover .task-list-item-convert-container{clip:auto;display:block;height:24px;overflow:visible;width:auto}div#\:\$p>svg>foreignObject>section ::-webkit-calendar-picker-indicator{filter:invert(50%)}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1){color:var(--h1-color);font-size:1.6em}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1),div#\:\$p>svg>foreignObject>section :is(h2,marp-h2){border-bottom:none}div#\:\$p>svg>foreignObject>section :is(h2,marp-h2){font-size:1.3em}div#\:\$p>svg>foreignObject>section :is(h3,marp-h3){font-size:1.1em}div#\:\$p>svg>foreignObject>section :is(h4,marp-h4){font-size:1.05em}div#\:\$p>svg>foreignObject>section :is(h5,marp-h5){font-size:1em}div#\:\$p>svg>foreignObject>section :is(h6,marp-h6){font-size:.9em}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1) strong,div#\:\$p>svg>foreignObject>section :is(h2,marp-h2) strong,div#\:\$p>svg>foreignObject>section :is(h3,marp-h3) strong,div#\:\$p>svg>foreignObject>section :is(h4,marp-h4) strong,div#\:\$p>svg>foreignObject>section :is(h5,marp-h5) strong,div#\:\$p>svg>foreignObject>section :is(h6,marp-h6) strong{color:var(--heading-strong-color);font-weight:inherit}div#\:\$p>svg>foreignObject>section :is(h1,marp-h1)::part(auto-scaling),div#\:\$p>svg>foreignObject>section :is(h2,marp-h2)::part(auto-scaling),div#\:\$p>svg>foreignObject>section :is(h3,marp-h3)::part(auto-scaling),div#\:\$p>svg>foreignObject>section :is(h4,marp-h4)::part(auto-scaling),div#\:\$p>svg>foreignObject>section :is(h5,marp-h5)::part(auto-scaling),div#\:\$p>svg>foreignObject>section :is(h6,marp-h6)::part(auto-scaling){max-height:563px}div#\:\$p>svg>foreignObject>section hr{height:0;padding-top:.25em}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre){border:1px solid var(--color-border-default);line-height:1.15;overflow:visible}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre)::part(auto-scaling){max-height:529px}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs){color:var(--color-prettylights-syntax-storage-modifier-import)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-doctag),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-keyword),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-meta .hljs-keyword),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-template-tag),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-template-variable),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-type),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-variable.language_){color:var(--color-prettylights-syntax-keyword)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-title),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-title.class_),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-title.class_.inherited__),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-title.function_){color:var(--color-prettylights-syntax-entity)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-attr),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-attribute),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-literal),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-meta),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-number),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-operator),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-attr),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-class),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-id),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-variable){color:var(--color-prettylights-syntax-constant)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-meta .hljs-string),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-regexp),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-string){color:var(--color-prettylights-syntax-string)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-built_in),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-symbol){color:var(--color-prettylights-syntax-variable)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-code),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-comment),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-formula){color:var(--color-prettylights-syntax-comment)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-name),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-quote),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-pseudo),div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-tag){color:var(--color-prettylights-syntax-entity-tag)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-subst){color:var(--color-prettylights-syntax-storage-modifier-import)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-section){color:var(--color-prettylights-syntax-markup-heading);font-weight:700}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-bullet){color:var(--color-prettylights-syntax-markup-list)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-emphasis){color:var(--color-prettylights-syntax-markup-italic);font-style:italic}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-strong){color:var(--color-prettylights-syntax-markup-bold);font-weight:700}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-addition){background-color:var(--color-prettylights-syntax-markup-inserted-bg);color:var(--color-prettylights-syntax-markup-inserted-text)}div#\:\$p>svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-deletion){background-color:var(--color-prettylights-syntax-markup-deleted-bg);color:var(--color-prettylights-syntax-markup-deleted-text)}div#\:\$p>svg>foreignObject>section footer,div#\:\$p>svg>foreignObject>section header{color:var(--header-footer-color);font-size:18px;left:30px;margin:0;position:absolute}div#\:\$p>svg>foreignObject>section header{top:21px}div#\:\$p>svg>foreignObject>section footer{bottom:21px}div#\:\$p>svg>foreignObject>section{--h1-color:#246;--header-footer-color:hsla(0,0%,40%,.75);--heading-strong-color:#48c;--paginate-color:#777;align-items:stretch;display:flex;flex-flow:column nowrap;font-size:29px;height:720px;justify-content:center;padding:78.5px;width:1280px}div#\:\$p>svg>foreignObject>section{--marpit-root-font-size:29px}div#\:\$p>svg>foreignObject>section:where(.invert){--h1-color:#cee7ff;--header-footer-color:hsla(0,0%,60%,.75);--heading-strong-color:#7bf;--paginate-color:#999}div#\:\$p>svg>foreignObject>section>:last-child,div#\:\$p>svg>foreignObject>section[data-footer]>:nth-last-child(2){margin-bottom:0}div#\:\$p>svg>foreignObject>section>:first-child,div#\:\$p>svg>foreignObject>section>header:first-child+*{margin-top:0}div#\:\$p>svg>foreignObject>section:after{bottom:21px;color:var(--paginate-color);font-size:24px;padding:0;position:absolute;right:30px}div#\:\$p>svg>foreignObject>section:after{--marpit-root-font-size:24px}div#\:\$p>svg>foreignObject>section[data-color] :is(h1,marp-h1),div#\:\$p>svg>foreignObject>section[data-color] :is(h2,marp-h2),div#\:\$p>svg>foreignObject>section[data-color] :is(h3,marp-h3),div#\:\$p>svg>foreignObject>section[data-color] :is(h4,marp-h4),div#\:\$p>svg>foreignObject>section[data-color] :is(h5,marp-h5),div#\:\$p>svg>foreignObject>section[data-color] :is(h6,marp-h6){color:currentcolor}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]{columns:initial!important;display:block!important;padding:0!important}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]:after,div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]:before,div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=content]:after,div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=content],div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background=pseudo],div#\:\$p>svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}div#\:\$p>svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="enterprise-cloud-infrastructure">Enterprise Cloud Infrastructure</h1>
+<p>Defining and standardizing Enterprise Cloud Infrastructure for organizations.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-teacher">Introduction to Teacher</h1>
+<p><img src="https://media.giphy.com/media/3ornk57KwDXf81rjWM/giphy.gif" alt="hello" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-teacher-1">Introduction to Teacher</h1>
+<h2 id="erik-reinert-aka-blackglasses">Erik Reinert aka &quot;Blackglasses&quot;</h2>
+<ul>
+<li>Senior Software Engineer</li>
+<li>Content Creator (@TheAltF4Stream on Twitch and YouTube)</li>
+<li>Flowchart Artist</li>
+<li>Problem Solver</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-teacher-2">Introduction to Teacher</h1>
+<h2 id="expierence-paths">Expierence Paths</h2>
+<ul>
+<li>Started with frontend (2+ years)</li>
+<li>Followed curiosity to backend (2+ years)</li>
+<li>Continued curiosity to fullstack (2+ years)</li>
+<li>Found passion in DevOps (currently - 4+ years)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course">Introduction to Course</h1>
+<p><img src="https://media.giphy.com/media/XD9o33QG9BoMis7iM4/giphy.gif" alt="welcome" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course-1">Introduction to Course</h1>
+<p>A quote from generative AI:</p>
+<blockquote>
+<p>If you don't know what problems you are solving, you can't solve them.</p>
+</blockquote>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course-2">Introduction to Course</h1>
+<p>Building of what we learned in &quot;DevOps for Developers&quot; our goals in this course are:</p>
+<ul>
+<li>Break down common problems an organization has</li>
+<li>Identify who solving these problems helps the most</li>
+<li>Explain why it is important to solve these problems</li>
+<li>Build a solution to these problems using standardized practices</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course-3">Introduction to Course</h1>
+<h2 id="is-devops-for-developers-course-required-for-this-course">Is &quot;DevOps for Developers&quot; course required for this course?</h2>
+<ul>
+<li>No, but it will help.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course-4">Introduction to Course</h1>
+<h2 id="should-i-watch-devops-for-developers-course-anyways">Should I watch &quot;DevOps for Developers&quot; course anyways?</h2>
+<p><img src="https://media.giphy.com/media/6cFcUiCG5eONW/giphy.gif" alt="yup" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course-5">Introduction to Course</h1>
+<p>We will follow the three W's of strategy for our organization challenges:</p>
+<ul>
+<li>What problem are we trying to solve?</li>
+<li>Who are we solving it for?</li>
+<li>Why are we solving this problem?</li>
+</ul>
+<h6 id="explained-further-in-devops-for-developers-course">Explained further in &quot;DevOps for Developers&quot; course.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course-6">Introduction to Course</h1>
+<h2 id="so-what-are-our-problems">So... what are our problems?</h2>
+<p><img src="https://media.giphy.com/media/fd1TSJqq3b4GI/giphy.gif" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course-7">Introduction to Course</h1>
+<h2 id="ask-our-first-w-what-problems-are-we-trying-to-solve">Ask our first W: What problem(s) are we trying to solve?</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course-8">Introduction to Course</h1>
+<h2 id="what-problems-are-we-trying-to-solve-as-an-organization">What problem(s) are we trying to solve as an organization?</h2>
+<ul>
+<li>Access Control and Permissions</li>
+<li>Software lifecycles</li>
+<li>Supporting infrastructure</li>
+<li>Developer expierence (aka DX)</li>
+</ul>
+<h6 id="this-is-only-a-short-list-of-problems-but-we-will-focus-on-these-for-this-course">This is only a short list of problems, but we will focus on these for this course.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course-9">Introduction to Course</h1>
+<h2 id="ask-our-second-w-who-are-we-solving-problems-for">Ask our second W: Who are we solving problems for?</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course-10">Introduction to Course</h1>
+<h2 id="who-are-we-solving-problems-for">Who are we solving problems for?</h2>
+<ul>
+<li>Developers</li>
+<li>Quality Assurance</li>
+<li>IT</li>
+<li>Others</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course-11">Introduction to Course</h1>
+<h2 id="ask-our-third-w-why-are-we-solving-this-problem">Ask our third W: Why are we solving this problem?</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-course-12">Introduction to Course</h1>
+<h2 id="why-are-we-solving-this-problem">Why are we solving this problem?</h2>
+<ul>
+<li>Organization needs (internal)</li>
+<li>Organization units needs (product, service, etc)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="organization-problems">Organization Problems</h1>
+<p><img src="https://media.giphy.com/media/FjhCTrjPaPy6s/giphy.gif" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="organization-problems-1">Organization Problems</h1>
+<h3 id="what-are-common-problems-organizations-face">What are common problems organizations face?</h3>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="organization-problems-2">Organization Problems</h1>
+<ul>
+<li>Role-Based Access Control</li>
+<li>Domains &amp; DNS</li>
+<li>Networking</li>
+<li>Resources (compute, storage, etc)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="organization-problems-3">Organization Problems</h1>
+<h2 id="role-based-access-control">Role-Based Access Control</h2>
+<ul>
+<li>Organizational Units (teams)</li>
+<li>Individuals (developers)</li>
+<li>Outside Contributors (third-parties)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="organization-problems-4">Organization Problems</h1>
+<h2 id="domains--dns">Domains &amp; DNS</h2>
+<ul>
+<li>Private vs public TLDs (top-level domains)</li>
+<li>DNS management and routing</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="organization-problems-5">Organization Problems</h1>
+<h2 id="networking">Networking</h2>
+<ul>
+<li>Private networks</li>
+<li>Public networks</li>
+<li>Firewall security boundaries</li>
+<li>Secure connections (VPN, etc)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="organization-problems-6">Organization Problems</h1>
+<h2 id="resources-compute-storage-etc">Resources (compute, storage, etc)</h2>
+<ul>
+<li>Amazon Web Services</li>
+<li>Google Cloud Platform</li>
+<li>Azure Cloud</li>
+<li>Others (boutique or self-hosting)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="developer-problems">Developer Problems</h1>
+<p><img src="https://media.giphy.com/media/h5Kj3oDLtuh6NoRy5x/giphy.gif" alt="help" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="developer-problems-1">Developer Problems</h1>
+<ul>
+<li>Source Control</li>
+<li>Service Management</li>
+<li>Continuous Integration</li>
+<li>Continuous Delivery</li>
+</ul>
+<h6 id="developers-only-deal-with-code-and-mechanisms-to-deploying-it">Developers ONLY deal with code and mechanisms to deploying it.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="developer-problems-2">Developer Problems</h1>
+<h2 id="source-control">Source Control</h2>
+<ul>
+<li>Repository management</li>
+<li>Branch protections &amp; policies</li>
+<li>Code reviews &amp; approvals</li>
+</ul>
+<h6 id="developers-must-have-standardized-procedures-to-manage-code-efficiently">Developers MUST have standardized procedures to manage code efficiently.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="developer-problems-3">Developer Problems</h1>
+<h2 id="service-management">Service Management</h2>
+<ul>
+<li>Configuration</li>
+<li>Provisioning</li>
+</ul>
+<h6 id="developers-empowered-to-manage-their-own-services">Developers EMPOWERED to manage their own services.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="developer-problems-4">Developer Problems</h1>
+<h2 id="continuous-integration">Continuous Integration</h2>
+<ul>
+<li>Building artifacts</li>
+<li>Testing changes</li>
+<li>Code coverage</li>
+<li>Code quality</li>
+</ul>
+<h6 id="developers-must-have-dependable-and-reliable-pipelines">Developers MUST have dependable and reliable pipelines.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="developer-problems-5">Developer Problems</h1>
+<h2 id="continuous-delivery">Continuous Delivery</h2>
+<ul>
+<li>Deploying artifacts</li>
+<li>Environment releases</li>
+</ul>
+<h6 id="developers-empowered-to-deploy-their-own-services">Developers EMPOWERED to deploy their own services.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="developer-problems-6">Developer Problems</h1>
+<h2 id="did-you-say-developers-maintain-their-own-deployments">Did you say &quot;developers&quot; maintain their own deployments?</h2>
+<p><img src="https://media.giphy.com/media/l0HlEMf3CdWiETeGk/giphy.gif" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="developer-problems-7">Developer Problems</h1>
+<h2 id="why-is-developer-empowerment-important">Why is developer empowerment important?</h2>
+<ul>
+<li>Faster development cycles</li>
+<li>Faster feedback loops</li>
+<li>Faster time to market</li>
+<li>Faster time to value</li>
+</ul>
+<h6 id="devops-teams-must-empower-developers-to-be-successful">DevOps teams MUST empower developers to be successful.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-gitops">Introduction to GitOps</h1>
+<p><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHh5OXN4ZTFyYjBrNDk2cTZwOGRsZnk2dzB5aXVsNHpwbjByczQ0aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jdW8IvE7tlLoPfbSKY/giphy.gif" alt="what" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-gitops-1">Introduction to GitOps</h1>
+<p>Another quote from generative AI:</p>
+<blockquote>
+<p>If you don't know what you did, you can't do it again.</p>
+</blockquote>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-gitops-2">Introduction to GitOps</h1>
+<h2 id="what-is-gitops-defined-by-ai">What is GitOps? (defined by AI)</h2>
+<blockquote>
+<p>GitOps is a paradigm or a set of practices that emphasizes using Git as a single source of truth for declarative infrastructure and applications.</p>
+</blockquote>
+<h6 id="pretty-much-gitops-is-a-way-to-manage-infrastructure-and-applications-using-git">Pretty much... GitOps is a way to manage infrastructure and applications using Git.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-gitops-3">Introduction to GitOps</h1>
+<h2 id="what-can-gitops-provide">What can GitOps provide?</h2>
+<ul>
+<li>Infrastructure as Code</li>
+<li>Automated Deployments</li>
+<li>Reproducibility and Rollbacks</li>
+<li>Enhanced Collaboration</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-gitops-4">Introduction to GitOps</h1>
+<h2 id="infrastructure-as-code-aka-iac">Infrastructure as Code (aka IaC)</h2>
+<p>Infrastructure and application configurations are stored in a Git repository and versioned for complete history. This allows for changes to be tracked and reviewed.</p>
+<h6 id="tracking-and-reviewing-is-crucial-to-scaling-any-enterprise-organization">Tracking and reviewing is crucial to scaling any enterprise organization.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-gitops-5">Introduction to GitOps</h1>
+<h2 id="automated-deployments">Automated Deployments</h2>
+<p>Changes to the repo trigger automatic deployments using pipelines or other methods, ensuring the live environment matches the repo's state. This allows for changes to be deployed quickly and reliably.</p>
+<h6 id="deploying-quickly-and-reliably-is-crucial-to-scaling-any-enterprise-organization">Deploying quickly and reliably is crucial to scaling any enterprise organization.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-gitops-6">Introduction to GitOps</h1>
+<h2 id="reproducibility-and-rollbacks">Reproducibility and Rollbacks</h2>
+<p>Since all changes are tracked in Git, it's easy to roll back or recreate specific states of the infrastructure or applications. This allows for changes to be reverted or recreated quickly.</p>
+<h6 id="reverting-or-recreating-quickly-is-crucial-to-scaling-any-enterprise-organization">Reverting or recreating quickly is crucial to scaling any enterprise organization.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-gitops-7">Introduction to GitOps</h1>
+<h2 id="enhanced-collaboration">Enhanced Collaboration</h2>
+<p>Developers use familiar Git-based workflows for both application and infrastructure changes. This allows for changes to be made by anyone in the organization with proper permissions.</p>
+<h6 id="empowering-individuals-to-contribute-is-crucial-to-scaling-any-enterprise-organization">Empowering individuals to contribute is crucial to scaling any enterprise organization.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-gitops-8">Introduction to GitOps</h1>
+<h2 id="tldr-for-gitops-said-by-ai">TLDR for GitOps (said by AI)</h2>
+<blockquote>
+<p>Essentially, with GitOps, if you want to know the current state of your system or how it looks, you just look at your Git repo.</p>
+</blockquote>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="introduction-to-gitops-9">Introduction to GitOps</h1>
+<h2 id="tldr-of-tldr-for-gitops-said-by-ai">TLDR of TLDR for GitOps (said by AI)</h2>
+<blockquote>
+<p>If you want to change the system, you change the repo.</p>
+</blockquote>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools">Automation Tools</h1>
+<p><img src="https://media.giphy.com/media/xT5LMyV3wwx20bNKtq/giphy.gif" alt="hmm" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-1">Automation Tools</h1>
+<h2 id="industry-standards">Industry Standards</h2>
+<ul>
+<li>Terraform* (widely used)</li>
+<li>Pulumi (growing community)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-2">Automation Tools</h1>
+<h2 id="what-about-this-opentofu-thing">What about this &quot;OpenTofu&quot; thing?</h2>
+<p><img src="https://media.giphy.com/media/l4Ep6uxU6aedrYUik/giphy.gif" alt="ehh" /></p>
+<h6 id="opentofu-is-a-new-open-source-automation-tool-that-is-gaining-popularity">OpenTofu is a new open-source automation tool that is gaining popularity.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-3">Automation Tools</h1>
+<h2 id="not-so-industry-standards">Not-so-Industry Standards</h2>
+<ul>
+<li>*OpenTofu (maybe)</li>
+</ul>
+<h6 id="opentofu-currently-only-helps-licensing-with-developers-or-providers-who-want-to-resell-terraform-like-solutions-this-could-change-in-the-future-or-it-could-also-be-another-tool">OpenTofu, currently, only helps licensing with developers or providers who want to resell Terraform-like solutions. This could change in the future or it could also be another tool.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-4">Automation Tools</h1>
+<h2 id="terraform">Terraform</h2>
+<ul>
+<li>declarative based configuration</li>
+<li>very low entrypoint for starting</li>
+<li>massive developer support</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-5">Automation Tools</h1>
+<h2 id="terraform-1">Terraform</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-hcl">resource &quot;aws_vpc&quot; &quot;main&quot; {
+  cidr_block       = &quot;10.0.0.0/16&quot;
+  instance_tenancy = &quot;default&quot;
+
+  tags = {
+    Name = &quot;main&quot;
+  }
+}
+</code></pre>
+<h6 id="example-of-creating-an-aws-vpc-virtual-private-cloud-using-terraform">Example of creating an AWS VPC (Virtual Private Cloud) using Terraform.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-6">Automation Tools</h1>
+<h2 id="pulumi">Pulumi</h2>
+<ul>
+<li>imperative language configuration (NodeJS, Python, Go, .NET, Java &amp; YAML)</li>
+<li>more &quot;customized&quot; solutions with possibly higher entrypoint</li>
+<li>more &quot;flexible&quot; solutions with ability to use any language</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-7">Automation Tools</h1>
+<h2 id="pulumi-1">Pulumi</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>import * as pulumi from &quot;@pulumi/pulumi&quot;;
+import * as aws from &quot;@pulumi/aws&quot;;
+
+const main = new aws.ec2.Vpc(&quot;main&quot;, {
+    cidrBlock: &quot;10.0.0.0/16&quot;,
+    instanceTenancy: &quot;default&quot;,
+    tags: {
+        Name: &quot;main&quot;,
+    },
+});
+</code></pre>
+<h6 id="example-of-creating-an-aws-vpc-virtual-private-cloud-using-pulumi-in-nodejs">Example of creating an AWS VPC (Virtual Private Cloud) using Pulumi in NodeJS.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-8">Automation Tools</h1>
+<h2 id="so-which-one-should-i-use">So... which one should I use?</h2>
+<p><img src="https://media.giphy.com/media/k56oRtCg218Z2/giphy.gif" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-9">Automation Tools</h1>
+<h2 id="how-to-choose">How to choose?</h2>
+<ul>
+<li>Focus on the problems you are trying to solve</li>
+<li>Focus on how efficient you want to be</li>
+<li>Focus on the tools you are already using</li>
+</ul>
+<h6 id="do-not-focus-on-what-is-best-or-most-popular-unless-you-want-to-waste-time">Do not focus on what is &quot;best&quot; or &quot;most popular&quot; unless you want to waste time.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-10">Automation Tools</h1>
+<h2 id="terraform-cases">Terraform Cases</h2>
+<ul>
+<li>Desire to use declarative configuration</li>
+<li>Desire to use a single language for all configurations</li>
+<li>Desire to use a single tool for all configurations</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-11">Automation Tools</h1>
+<h2 id="tldr-terraform-cases">TLDR; Terraform Cases</h2>
+<p><img src="https://media.giphy.com/media/26AHLNr8en8J3ovOo/giphy.gif" alt="" /></p>
+<h6 id="terraform-is-a-great-choice-for-large-or-small-teams-with-fast-iteration-cycles">Terraform is a great choice for large or small teams with fast iteration cycles.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-12">Automation Tools</h1>
+<h2 id="pulumi-cases">Pulumi Cases</h2>
+<ul>
+<li>Desire to use imperative configuration (NodeJS, Python, Go, .NET, Java &amp; YAML)</li>
+<li>Desire to use multiple languages for configurations</li>
+<li>Desire to use multiple tools for configurations</li>
+</ul>
+<h6 id="pulumi-is-covered-more-in-depth-in-the-devops-for-developers-course">Pulumi is covered more in-depth in the &quot;DevOps for Developers&quot; course.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-tools-13">Automation Tools</h1>
+<h2 id="tldr-pulumi-cases">TLDR; Pulumi Cases</h2>
+<p><img src="https://media.giphy.com/media/9WXyFIDv2PyBq/giphy.gif" alt="perfection" /></p>
+<h6 id="pulumi-is-a-great-choice-for-organizations-with-specific-needs-or-scaling-requirements">Pulumi is a great choice for organizations with specific needs or scaling requirements.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-providers">Automation Providers</h1>
+<p><img src="https://media.giphy.com/media/sDcfxFDozb3bO/giphy.gif" alt="help" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-providers-1">Automation Providers</h1>
+<h2 id="should-you-use-an-automation-provider">Should you use an automation provider?</h2>
+<ul>
+<li>Standardized practices</li>
+<li>Collaboration features</li>
+<li>Additional features (cost management, etc)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-providers-2">Automation Providers</h1>
+<h2 id="do-you-need-to-spend-money-on-providers">Do you need to spend money on providers?</h2>
+<ul>
+<li>No, but it will help focus money on other problems.</li>
+</ul>
+<h6 id="this-decision-is-up-to-the-organization">This decision is up to the organization.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-providers-3">Automation Providers</h1>
+<h2 id="what-if-i-dont-want-to-spend-money-on-providers">What if I don't want to spend money on providers?</h2>
+<ul>
+<li>You can build your own solutions</li>
+<li>You can use open-source solutions</li>
+<li>You can pay engineers to build solutions (employees or contractors)</li>
+</ul>
+<h6 id="no-matter-what-you-will-spend-money-on-automation">No matter what, you will spend money on automation.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-providers-4">Automation Providers</h1>
+<h2 id="what-are-some-automation-providers">What are some automation providers?</h2>
+<ul>
+<li>Terraform Cloud*</li>
+<li>Pulumi Cloud</li>
+<li>Env0, Spacelift, and others</li>
+</ul>
+<h6 id="there-are-many-more-but-these-are-the-most-common">There are many more, but these are the most common.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-providers-5">Automation Providers</h1>
+<h2 id="terraform-cloud">Terraform Cloud</h2>
+<ul>
+<li>Industry standard for enterprise</li>
+<li>Maintains state of infrastructure</li>
+<li>Provides access control features</li>
+<li>Includes infrastructure (no hosting required)</li>
+</ul>
+<h6 id="terrafom-cloud-is-a-great-choice-for-large-or-small-teams-collaborating-on-infrastructure">Terrafom Cloud is a great choice for large or small teams collaborating on infrastructure.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-providers-6">Automation Providers</h1>
+<h2 id="pulumi-cloud">Pulumi Cloud</h2>
+<ul>
+<li>Alternative to Terraform Cloud</li>
+<li>Maintains state of infrastructure</li>
+<li>No pipelines (requires hosting)</li>
+</ul>
+<h6 id="pulumi-cloud-is-a-great-choice-for-organizations-with-existing-pipelines-or-hosting">Pulumi Cloud is a great choice for organizations with existing pipelines or hosting.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="64" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-providers-7">Automation Providers</h1>
+<h2 id="env0-spacelift-and-others">Env0, Spacelift, and others</h2>
+<ul>
+<li>Alternatives to Terraform Cloud and Pulumi Cloud</li>
+<li>Includes infrastructure (no hosting required)</li>
+<li>Supports multiple types of automation tools (both Terraform and Pulumi, etc)</li>
+<li>Additional features (cost management, etc)</li>
+</ul>
+<h6 id="these-platforms-are-great-when-you-want-to-use-multiple-tools-or-solutions">These platforms are great when you want to use multiple tools or solutions.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-providers-8">Automation Providers</h1>
+<h2 id="how-to-choose-1">How to choose?</h2>
+<p><img src="https://media.giphy.com/media/WRQBXSCnEFJIuxktnw/giphy.gif" alt="pick" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="automation-providers-9">Automation Providers</h1>
+<h2 id="how-to-choose-2">How to choose?</h2>
+<ul>
+<li>Focus on the problems you are trying to solve</li>
+<li>Focus on the tools you are already using</li>
+<li>Focus on the features you need first</li>
+</ul>
+<h6 id="do-not-focus-on-what-is-best-or-most-popular-unless-you-want-to-waste-time-1">Do not focus on what is &quot;best&quot; or &quot;most popular&quot; unless you want to waste time.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="continuous-integration--delivery-cicd">Continuous Integration &amp; Delivery (CI/CD)</h1>
+<p><img src="https://media.giphy.com/media/N8wR1WZobKXaE/giphy-downsized-large.gif" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="continuous-integration--delivery-cicd-1">Continuous Integration &amp; Delivery (CI/CD)</h1>
+<h2 id="what-is-continuous-integration-defined-by-ai">What is continuous integration? (defined by AI)</h2>
+<blockquote>
+<p>Continuous integration (CI) is the practice of automating the integration of code changes from multiple contributors into a single software project.</p>
+</blockquote>
+<h6 id="pretty-much-ci-is-a-way-to-validate-code-changes-using-automation">Pretty much... CI is a way to validate code changes using automation.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="continuous-integration--delivery-cicd-2">Continuous Integration &amp; Delivery (CI/CD)</h1>
+<h2 id="what-is-continuous-delivery-defined-by-ai">What is continuous delivery? (defined by AI)</h2>
+<blockquote>
+<p>Continuous delivery (CD) is an approach to software engineering based on producing software in short cycles.</p>
+</blockquote>
+<h6 id="pretty-much-cd-is-a-way-to-deploy-code-changes-using-automation">Pretty much... CD is a way to deploy code changes using automation.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="70" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="continuous-integration--delivery-cicd-3">Continuous Integration &amp; Delivery (CI/CD)</h1>
+<h2 id="are-ci-and-cd-the-same-thing">Are CI and CD the same thing?</h2>
+<p><img src="https://media.giphy.com/media/JYZ397GsFrFtu/giphy.gif" alt="" /></p>
+<h6 id="no-but-they-are-often-used-together">No, but they are often used together.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="71" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="continuous-integration--delivery-cicd-4">Continuous Integration &amp; Delivery (CI/CD)</h1>
+<h2 id="what-is-the-tldr-on-differences">What is the TLDR; on differences?</h2>
+<ul>
+<li>Continuous integration (CI) validates code changes</li>
+<li>Continuous delivery (CD) deploys code changes</li>
+</ul>
+<h6 id="ci-and-cd-should-exist-as-separate-automation-strategies">CI and CD should exist as separate automation strategies.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="72" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="continuous-integration--delivery-cicd-5">Continuous Integration &amp; Delivery (CI/CD)</h1>
+<h2 id="cloud-providers">Cloud Providers</h2>
+<ul>
+<li>GitHub Actions*</li>
+<li>GitLab CI/CD</li>
+<li>AWS CodePipeline</li>
+<li>Azure Pipelines</li>
+<li>Others (CircleCI, Bitbucket Pipelines, etc)</li>
+</ul>
+<h6 id="there-are-many-more-but-these-are-the-most-common-1">There are many more, but these are the most common.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="73" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="continuous-integration--delivery-cicd-6">Continuous Integration &amp; Delivery (CI/CD)</h1>
+<h2 id="open-source">Open Source</h2>
+<ul>
+<li>Jenkins (not recommended)</li>
+<li>Drone (limited features)</li>
+<li>Others (Concourse, etc)</li>
+</ul>
+<h6 id="there-are-many-more-but-these-are-the-most-common-2">There are many more, but these are the most common.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="74" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="continuous-integration--delivery-cicd-7">Continuous Integration &amp; Delivery (CI/CD)</h1>
+<h2 id="open-source-kubernetes">Open Source (Kubernetes)</h2>
+<ul>
+<li>Argo Workflows</li>
+<li>GoCD</li>
+<li>Tekton</li>
+</ul>
+<h6 id="there-are-many-more-but-these-are-the-most-common-3">There are many more, but these are the most common.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="75" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="continuous-integration--delivery-cicd-8">Continuous Integration &amp; Delivery (CI/CD)</h1>
+<h2 id="what-about-manual-scripts">What about manual scripts?</h2>
+<ul>
+<li>No... just no.</li>
+</ul>
+<h6 id="this-is-not-recommended-but-it-is-an-option-if-you-have-specific-requirements">This is NOT recommended, but it is an option if you have specific requirements.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="76" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="continuous-integration--delivery-cicd-9">Continuous Integration &amp; Delivery (CI/CD)</h1>
+<h2 id="but-seriously-why-not">But seriously why not?</h2>
+<p><img src="https://media.giphy.com/media/403aNkstqvOqameBHW/giphy.gif" alt="" /></p>
+<h6 id="manual-scripts-are-not-scalable-or-reliable">Manual scripts are not scalable or reliable.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="77" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="self-hosted-vs-cloud-providers">Self-Hosted vs Cloud Providers</h1>
+<p><img src="https://media.giphy.com/media/l46CsTPetihC1rX9K/giphy.gif" alt="" /></p>
+<h6 id="this-is-a-common-question-but-it-is-not-the-right-question">This is a common question, but it is not the right question.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="78" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="self-hosted-vs-cloud-providers-1">Self-Hosted vs Cloud Providers</h1>
+<h2 id="should-i-self-host-my-infrastructure">Should I self-host my infrastructure?</h2>
+<ul>
+<li>No.</li>
+</ul>
+<h6 id="this-decision-is-up-to-the-organization-but-normally-not-recommended">This decision is up to the organization but normally not recommended.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="79" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="self-hosted-vs-cloud-providers-2">Self-Hosted vs Cloud Providers</h1>
+<h2 id="its-soo-much-cheaper">It's SOO much cheaper!</h2>
+<ul>
+<li>Also no.</li>
+</ul>
+<h6 id="this-is-a-common-misconception">This is a common misconception.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="80" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="self-hosted-vs-cloud-providers-3">Self-Hosted vs Cloud Providers</h1>
+<h2 id="its-soo-much-cheaper-1">It's SOO much cheaper!</h2>
+<ul>
+<li>You will spend more money on engineers.</li>
+<li>You will spend more money on maintenance.</li>
+<li>You will spend more money on security.</li>
+</ul>
+<h6 id="tldr-its-not-cheaper-unless-you-have-well-designed-specific-requirements">TLDR; it's not cheaper unless you have well designed specific requirements.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="81" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="self-hosted-vs-cloud-providers-4">Self-Hosted vs Cloud Providers</h1>
+<h2 id="when-should-i-self-host-my-infrastructure">When should I self-host my infrastructure?</h2>
+<ul>
+<li>You have specific requirements for a problem.</li>
+</ul>
+<h6 id="self-hosting-should-be-for-isolated-or-separately-managed-infrastructure">Self-hosting should be for isolated or separately managed infrastructure.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="82" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="self-hosted-vs-cloud-providers-5">Self-Hosted vs Cloud Providers</h1>
+<h2 id="have-you-self-hosted-infrastructure-before">Have you self-hosted infrastructure before?</h2>
+<ul>
+<li>Yes. Colocation datacenter.</li>
+<li>Yes. Private clouds (OpenStack and VMware).</li>
+</ul>
+<h6 id="in-both-times-it-was-not-cheaper-or-easier-and-more-time-was-spent-on-maintenance">In both times it was not cheaper or easier and more time was spent on maintenance.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="83" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="self-hosted-vs-cloud-providers-6">Self-Hosted vs Cloud Providers</h1>
+<h2 id="which-cloud-providers-should-i-use">Which cloud providers should I use?</h2>
+<ul>
+<li>Amazon Web Services*</li>
+<li>Google Cloud Platform</li>
+<li>Azure Cloud</li>
+<li>Others (IBM, etc)</li>
+</ul>
+<h6 id="there-are-many-more-but-these-are-the-most-common-4">There are many more, but these are the most common.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="84" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="self-hosted-vs-cloud-providers-7">Self-Hosted vs Cloud Providers</h1>
+<h2 id="what-about-others-ive-seen-before">What about others I've seen before?</h2>
+<ul>
+<li>Digital Ocean</li>
+<li>Linode</li>
+<li>Others (Heroku, etc)</li>
+</ul>
+<h6 id="these-are-not-considered-enterprise-cloud-providers-as-they-build-on-top-of-other-providers">These are not considered enterprise cloud providers as they build on top of other providers.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="85" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="self-hosted-vs-cloud-providers-8">Self-Hosted vs Cloud Providers</h1>
+<h2 id="how-can-boutique-providers-help">How can &quot;boutique&quot; providers help?</h2>
+<ul>
+<li>They can help with specific requirements.</li>
+<li>They can help with specific problems.</li>
+<li>They can help with speed to market.</li>
+</ul>
+<h6 id="boutique-providers-are-great-for-small-teams-or-organizations">Boutique providers are great for small teams or organizations.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="86" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="self-hosted-vs-cloud-providers-9">Self-Hosted vs Cloud Providers</h1>
+<h2 id="which-cloud-provider-should-i-use">Which cloud provider should I use?</h2>
+<ul>
+<li>Evaluate your requirements</li>
+<li>Include possible future requirements</li>
+<li>Determine which provider fits your needs</li>
+<li>Determine which provider fits your budget</li>
+<li>Test with a constant proof of concept (same used for all providers)</li>
+<li>Document your findings and compare</li>
+</ul>
+<h6 id="this-is-not-a-simple-decision-and-should-be-taken-seriously-with-proper-research">This is not a simple decision and should be taken seriously with proper research.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="87" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="time-to-build">Time to build!</h1>
+<p><img src="https://media.giphy.com/media/ipKce0fXlBQUo/giphy.gif" alt="" /></p>
+<h6 id="no-more-talking-lets-build-some-infrastructure">No more talking, let's build some infrastructure!</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="88" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="time-to-build-1">Time to build!</h1>
+<h2 id="selected-providers">Selected Providers</h2>
+<ul>
+<li>Doppler (development secrets management)
+<ul>
+<li><a href="https://dashboard.doppler.com/register">https://dashboard.doppler.com/register</a></li>
+</ul>
+</li>
+<li>GitHub + Actions (source control &amp; pipelines)
+<ul>
+<li><a href="https://github.com/signup">https://github.com/signup</a></li>
+</ul>
+</li>
+<li>Terraform Cloud (automation provider)
+<ul>
+<li><a href="https://app.terraform.io/public/signup/account">https://app.terraform.io/public/signup/account</a></li>
+</ul>
+</li>
+<li>AWS (cloud provider)
+<ul>
+<li><a href="https://portal.aws.amazon.com/billing/signup">https://portal.aws.amazon.com/billing/signup</a></li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="89" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="time-to-build-2">Time to build!</h1>
+<h2 id="selected-tools">Selected Tools</h2>
+<ul>
+<li>Doppler CLI
+<ul>
+<li><a href="https://docs.doppler.com/docs/cli">https://docs.doppler.com/docs/cli</a></li>
+</ul>
+</li>
+<li>GitHub CLI
+<ul>
+<li><a href="https://cli.github.com/">https://cli.github.com/</a></li>
+</ul>
+</li>
+<li>Terraform CLI
+<ul>
+<li><a href="https://developer.hashicorp.com/terraform/downloads">https://developer.hashicorp.com/terraform/downloads</a></li>
+</ul>
+</li>
+<li>AWS CLI
+<ul>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html</a></li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="90" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="time-to-build-3">Time to build!</h1>
+<h2 id="infrastructure-overview">Infrastructure Overview</h2>
+<h6 id="this-is-an-example-of-enterprise-infrastructure-automation">This is an example of enterprise infrastructure automation.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="91" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="time-to-build-4">Time to build!</h1>
+<h2 id="service-overview">Service Overview</h2>
+<h6 id="this-is-an-example-of-a-enterprise-service-automation">This is an example of a enterprise service automation.</h6>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="92" data-class="invert lead" data-theme="default" class="invert lead" style="--class:invert lead;--theme:default;">
+<h1 id="time-to-build-5">Time to build!</h1>
+<h2 id="workshop-materials">Workshop Materials</h2>
+<ul>
+<li>Terraform Cloud: <a href="https://github.com/ALT-F4-LLC/fem-eci-terraform-tfe">https://github.com/ALT-F4-LLC/fem-eci-terraform-tfe</a></li>
+<li>Github: <a href="https://github.com/ALT-F4-LLC/fem-eci-terraform-github">https://github.com/ALT-F4-LLC/fem-eci-terraform-github</a></li>
+<li>AWS:
+<ul>
+<li>Network: <a href="https://github.com/ALT-F4-LLC/fem-eci-terraform-aws-network">https://github.com/ALT-F4-LLC/fem-eci-terraform-aws-network</a></li>
+<li>Cluster: <a href="https://github.com/ALT-F4-LLC/fem-eci-terraform-aws-cluster">https://github.com/ALT-F4-LLC/fem-eci-terraform-aws-cluster</a></li>
+</ul>
+</li>
+<li>Service: <a href="https://github.com/ALT-F4-LLC/fem-eci-terraform-product-service">https://github.com/ALT-F4-LLC/fem-eci-terraform-product-service</a></li>
+</ul>
+<h6 id="this-is-an-example-of-a-enterprise-service-automation-1">This is an example of a enterprise service automation.</h6>
+</section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{constructor(){super(),this.svgPreserveAspectRatio="xMinYMid meet";const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){var t,s,o,r,a;this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=null!==(t=this.shadowRoot.querySelector(`div[${e}]`))&&void 0!==t?t:void 0;const l=this.svg;this.svg=null!==(o=null===(s=this.wrapper)||void 0===s?void 0:s.querySelector(`svg[${i}]`))&&void 0!==o?o:void 0,this.svg!==l&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=null!==(a=null===(r=this.svg)||void 0===r?void 0:r.querySelector(`span[${n}]`))&&void 0!==a?a:void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){var t,e,i,n,s,o,r;let a=Math.ceil(null!==(e=null===(t=this.containerSize)||void 0===t?void 0:t.width)&&void 0!==e?e:0);const l=Math.ceil(null!==(n=null===(i=this.containerSize)||void 0===i?void 0:i.height)&&void 0!==n?n:0);void 0!==this.dataset.downscaleOnly&&(a=Math.max(a,null!==(o=null===(s=this.wrapperSize)||void 0===s?void 0:s.width)&&void 0!==o?o:0));const c=null===(r=this.svg)||void 0===r?void 0:r.querySelector(":scope > foreignObject");if(null==c||c.setAttribute("width",`${a}`),null==c||c.setAttribute("height",`${l}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${a} ${l}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=a<=0||l<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const o=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this.attachShadow({mode:"open"})}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_update(){const t=i?`<style>:host { ${i} }</style>`:"";let e="<slot></slot>";const{autoScaling:n}=this.dataset;if(void 0!==n){e=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===n?"data-downscale-only":""}>${e}</marp-auto-scaling>`}this.shadowRoot.innerHTML=t+e}};let r;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),g=Symbol();const h=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,o,r;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(r=null===(o=n.y)||void 0===o?void 0:o.baseVal.value)&&void 0!==r?r:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await h()}finally{s=!0}})();const o=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(o)};return o(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const b=Symbol(),w=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();null!=r||(r=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is")),r&&a!==HTMLElement?i||customElements.define(s,o(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,o(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[b])return e[b];const i=v({target:e}),n=()=>{i(),delete e[b]},l=Object.assign(n,{cleanup:n,update:()=>w(e)});return Object.defineProperty(e,b,{configurable:!0,value:l}),l},y=document.currentScript;w(y?y.getRootNode():document)}();
+</script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@3.2.0/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),i={},a=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){i[e]=(i[e]||[]).filter((function(e){return e!==t}))},l=function(e,t){return(i[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},c=function(e,t){o[e]&&(n&&l("deactivate",a(n,t)),n=o[e],l("activate",a(n,t)))},d=function(e,t){var r=o.indexOf(n)+e;l(e>0?"next":"prev",a(n,t))&&c(r,t)},u={off:s,on:function(e,t){return(i[e]||(i[e]=[])).push(t),s.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return o.indexOf(n);l("slide",a(o[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:o,destroy:function(e){l("destroy",a(n,e)),i={}}};return(t||[]).forEach((function(e){e(u)})),n||c(0),u}},n=e(t);const r=document.body,o=(...e)=>history.replaceState(...e),i="presenter",a="next",s=["",i,a],l="bespoke-marp-",c=`data-${l}`,d=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const i=e.toString();return`${t}//${n}${r}${i?"?":""}${i}${o}`},u=()=>r.dataset.bespokeView,f=e=>new URLSearchParams(location.search).get(e),m=(e,t={})=>{var n;const r={location,setter:o,...t},i=new URLSearchParams(r.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?i.set(t,n):i.delete(t)}try{r.setter({...null!==(n=window.history.state)&&void 0!==n?n:{}},"",d(i,r.location))}catch(e){console.error(e)}},g=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}})(),p=e=>{try{return localStorage.getItem(e)}catch(e){return null}},v=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch(e){return!1}},h=e=>{try{return localStorage.removeItem(e),!0}catch(e){return!1}},y=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},b=e=>{e.parent.classList.add(`${l}parent`),e.slides.forEach((e=>e.classList.add(`${l}slide`))),e.on("activate",(t=>{const n=`${l}active`,r=t.slide,o=r.classList,i=!o.contains(n);if(e.slides.forEach((e=>{e.classList.remove(n),y(e,!0)})),o.add(n),y(r,!1),i){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}}))},w=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const i=t<r||t===r&&n<=o;e.setAttribute(`${c}fragment`,(i?"":"in")+"active");const a=`${c}current-fragment`;t===r&&n===o?e.setAttribute(a,"current"):e.removeAttribute(a)}))})),e.fragmentIndex=o;const i={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",i)};e.on("next",(({fragment:i=!0})=>{if(i){if(r(1))return o(t,n+1),!1;const i=t+1;e.fragments[i]&&o(i,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const i=e.fragments[t+1];i&&o(t+1,i.length-1)}})),e.on("prev",(({fragment:i=!0})=>{if(r(-1)&&i)return o(t,n-1),!1;const a=t-1;e.fragments[a]&&o(a,e.fragments[a].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)})),o(0,0)},x=document,k=()=>!(!x.fullscreenEnabled&&!x.webkitFullscreenEnabled),$=()=>!(!x.fullscreenElement&&!x.webkitFullscreenElement),E=e=>{e.fullscreen=()=>{k()&&(async()=>{return $()?null===(e=x.exitFullscreen||x.webkitExitFullscreen)||void 0===e?void 0:e.call(x):((e=x.body)=>{var t;return null===(t=e.requestFullscreen||e.webkitRequestFullscreen)||void 0===t?void 0:t.call(e)})();var e})()},document.addEventListener("keydown",(t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!k()||(e.fullscreen(),t.preventDefault())}))},L=`${l}inactive`,S=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let i;const a=()=>{i&&clearTimeout(i),i=setTimeout((()=>{r.add(L),o()}),e),r.contains(L)&&(r.remove(L),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,a);setTimeout(a,0)},P=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],_=e=>{e.parent.addEventListener("keydown",(e=>{if(!e.target)return;const t=e.target;(P.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()}))},T=e=>{window.addEventListener("load",(()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${c}load`,e?"":"hideable")}}))},I=({interval:e=250}={})=>t=>{document.addEventListener("keydown",(e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()}));let n,r,o=0;t.parent.addEventListener("wheel",(i=>{let a=!1;const s=(e,t)=>{e&&(a=a||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),(null==e?void 0:e.parentElement)&&s(e.parentElement,t)};if(0!==i.deltaX&&s(i.target,"X"),0!==i.deltaY&&s(i.target,"Y"),a)return;i.preventDefault();const l=Math.sqrt(i.deltaX**2+i.deltaY**2);if(void 0!==i.wheelDelta){if(void 0===i.webkitForce&&Math.abs(i.wheelDelta)<40)return;if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<4)return}else if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<12)return;r&&clearTimeout(r),r=setTimeout((()=>{n=0}),e);const c=Date.now()-o<e,d=l<=n;if(n=l,c||d)return;let u;(i.deltaX>0||i.deltaY>0)&&(u="next"),(i.deltaX<0||i.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())}))},M=(e=`.${l}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${c}osc=${JSON.stringify(e)}]`).forEach(n)};return k()||n("fullscreen",(e=>e.style.display="none")),g||n("presenter",(e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."})),e=>{t.addEventListener("click",(t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?null==e||e.fullscreen():"presenter"===n&&e.openPresenterView()}})),e.parent.appendChild(t),e.on("activate",(({index:t})=>{n("page",(n=>n.textContent=`Page ${t+1} of ${e.slides.length}`))})),e.on("fragment",(({index:t,fragments:r,fragmentIndex:o})=>{n("prev",(e=>e.disabled=0===t&&0===o)),n("next",(n=>n.disabled=t===e.slides.length-1&&o===r.length-1))})),e.on("marp-active",(()=>y(t,!1))),e.on("marp-inactive",(()=>y(t,!0))),k()&&(e=>{for(const t of["","webkit"])x.addEventListener(t+"fullscreenchange",e)})((()=>n("fullscreen",(e=>e.classList.toggle("exit",k()&&$())))))}},O=e=>{window.addEventListener("message",(t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),i=Number.parseInt(n,10)+1;i>=e.fragments[o].length&&(o+=1,i=0),e.slide(o,{fragment:i})}}))};var A=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"];let C=e=>String(e).replace(/[&<>"']/g,(e=>`&${D[e]};`)),D={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},N="dangerouslySetInnerHTML",B={className:"class",htmlFor:"for"},q={};function K(e,t){let n=[],r="";t=t||{};for(let e=arguments.length;e-- >2;)n.push(arguments[e]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(let e in t)!1!==t[e]&&null!=t[e]&&e!==N&&(r+=` ${B[e]?B[e]:C(e)}="${C(t[e])}"`);r+=">"}if(-1===A.indexOf(e)){if(t[N])r+=t[N].__html;else for(;n.length;){let e=n.pop();if(e)if(e.pop)for(let t=e.length;t--;)n.push(e[t]);else r+=!0===q[e]?e:C(e)}r+=e?`</${e}>`:""}return q[r]=!0,r}const j=({children:e})=>K(null,null,...e),F=`${l}presenter-`,V={container:`${F}container`,dragbar:`${F}dragbar-container`,next:`${F}next`,nextContainer:`${F}next-container`,noteContainer:`${F}note-container`,noteWrapper:`${F}note-wrapper`,noteButtons:`${F}note-buttons`,infoContainer:`${F}info-container`,infoPage:`${F}info-page`,infoPageText:`${F}info-page-text`,infoPagePrev:`${F}info-page-prev`,infoPageNext:`${F}info-page-next`,noteButtonsBigger:`${F}note-bigger`,noteButtonsSmaller:`${F}note-smaller`,infoTime:`${F}info-time`,infoTimer:`${F}info-timer`},U=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=V.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",K(j,null,K("div",{class:V.nextContainer},K("iframe",{class:V.next,src:"?view=next"})),K("div",{class:V.dragbar}),K("div",{class:V.noteContainer},K("div",{class:V.noteWrapper}),K("div",{class:V.noteButtons},K("button",{class:V.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),K("button",{class:V.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),K("div",{class:V.infoContainer},K("div",{class:V.infoPage},K("button",{class:V.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),K("span",{class:V.infoPageText}),K("button",{class:V.infoPageNext,tabindex:"-1",title:"Next"},"Next")),K("time",{class:V.infoTime,title:"Current time"}),K("time",{class:V.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(V.dragbar).addEventListener("mousedown",(()=>{t=!0,r(V.dragbar).classList.add("active")})),window.addEventListener("mouseup",(()=>{t=!1,r(V.dragbar).classList.remove("active")})),window.addEventListener("mousemove",(e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(V.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)})),r(V.nextContainer).addEventListener("click",(()=>e.next()));const n=r(V.next),o=(i=n,(e,t)=>{var n;return null===(n=i.contentWindow)||void 0===n?void 0:n.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin)});var i;n.addEventListener("load",(()=>{r(V.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",(({index:e,fragmentIndex:t})=>o(e,t)))}));const a=document.querySelectorAll(".bespoke-marp-note");a.forEach((e=>{e.addEventListener("keydown",(e=>e.stopPropagation())),r(V.noteWrapper).appendChild(e)})),e.on("activate",(()=>a.forEach((t=>t.classList.toggle("active",t.dataset.index==e.slide())))));let s=0;const l=e=>{s=Math.max(-5,s+e),r(V.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},c=()=>l(1),d=()=>l(-1),u=r(V.noteButtonsBigger),f=r(V.noteButtonsSmaller);u.addEventListener("click",(()=>{u.blur(),c()})),f.addEventListener("click",(()=>{f.blur(),d()})),document.addEventListener("keydown",(e=>{"+"===e.key&&c(),"-"===e.key&&d()}),!0),e.on("activate",(({index:t})=>{r(V.infoPageText).textContent=`${t+1} / ${e.slides.length}`}));const m=r(V.infoPagePrev),g=r(V.infoPageNext);m.addEventListener("click",(t=>{m.blur(),e.prev({fragment:!t.shiftKey})})),g.addEventListener("click",(t=>{g.blur(),e.next({fragment:!t.shiftKey})})),e.on("fragment",(({index:t,fragments:n,fragmentIndex:r})=>{m.disabled=0===t&&0===r,g.disabled=t===e.slides.length-1&&r===n.length-1}));let p=new Date;const v=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-p.getTime(),o=t(n/1e3%60),i=t(n/1e3/60%60),a=t(n/36e5%24);r(V.infoTime).textContent=e.toLocaleTimeString(),r(V.infoTimer).textContent=`${a}:${i}:${o}`};v(),setInterval(v,250),r(V.infoTimer).addEventListener("click",(()=>{p=new Date}))})(e)},X=e=>{if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:H},presenterUrl:{enumerable:!0,get:R}}),g&&document.addEventListener("keydown",(t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())}))};function H(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,F+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function R(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),d(e)}const W=e=>{const t=u();return t===a&&e.appendChild(document.createElement("span")),{"":X,[i]:U,[a]:O}[t]},J=e=>{e.on("activate",(t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach((n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"}))}))},Y=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},z=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?Y(f("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:i,slides:a}=e,s=o(0,r(t,a.length-1)),l=o(0,r(n||0,i[s].length-1));s===e.slide()&&l===e.fragmentIndex||e.slide(s,{fragment:l})})((()=>{var t,r;if(location.hash){const[o]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(o))return(null!==(t=Y(o))&&void 0!==t?t:1)-1;const i=document.getElementById(o)||document.querySelector(`a[name="${CSS.escape(o)}"]`);if(i){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(i)){const t=null===(r=e.fragments)||void 0===r?void 0:r[o],a=i.closest("[data-marpit-fragment]");if(t&&a){const e=t.indexOf(a);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",(({index:e,fragmentIndex:r})=>{n||m({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})})),setTimeout((()=>{o(),window.addEventListener("hashchange",(()=>r((()=>{o({fragment:!1}),m({f:void 0})})))),window.addEventListener("popstate",(()=>{n||r((()=>o()))})),n=!1}),0)}},G=(e={})=>{var t;const n=e.key||(null===(t=window.history.state)||void 0===t?void 0:t.marpBespokeSyncKey)||Math.random().toString(36).slice(2),r=`bespoke-marp-sync-${n}`;var i;i={marpBespokeSyncKey:n},m({},{setter:(e,...t)=>o({...e,...i},...t)});const a=()=>{const e=p(r);return e?JSON.parse(e):Object.create(null)},s=e=>{const t=a(),n={...t,...e(t)};return v(r,JSON.stringify(n)),n},l=()=>{window.removeEventListener("pageshow",l),s((e=>({reference:(e.reference||0)+1})))};return e=>{l(),Object.defineProperty(e,"syncKey",{value:n,enumerable:!0});let t=!0;setTimeout((()=>{e.on("fragment",(e=>{t&&s((()=>({index:e.index,fragmentIndex:e.fragmentIndex})))}))}),0),window.addEventListener("storage",(n=>{if(n.key===r&&n.oldValue&&n.newValue){const r=JSON.parse(n.oldValue),o=JSON.parse(n.newValue);if(r.index!==o.index||r.fragmentIndex!==o.fragmentIndex)try{t=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{t=!0}}}));const o=()=>{const{reference:e}=a();void 0===e||e<=1?h(r):s((()=>({reference:e-1})))};window.addEventListener("pagehide",(e=>{e.persisted&&window.addEventListener("pageshow",l),o()})),e.on("destroy",o)}},{PI:Q,abs:Z,sqrt:ee,atan2:te}=Math,ne={passive:!0},re=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,i=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",(({touches:e})=>{r=1===e.length?i(e[0]):void 0}),ne),o.addEventListener("touchmove",(e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=i(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=ee(Z(n)**2+Z(o)**2),r.radian=te(n,o)}else r=void 0})),o.addEventListener("touchend",(o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+Q)%(2*Q)-Q;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}}),ne)},oe=new Map;oe.clear(),oe.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const ie={both:"",outgoing:"outgoing-",incoming:"incoming-"},ae={forward:"",backward:"-backward"},se=e=>`--marp-bespoke-transition-animation-${e}`,le=e=>`--marp-transition-${e}`,ce=se("name"),de=se("duration"),ue=e=>new Promise((t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",(()=>o(n))),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const i=getComputedStyle(r).getPropertyValue(le("duration"));i&&(n.defaultDuration=i),((e,t)=>{requestAnimationFrame((()=>{e.style.animationPlayState="running",requestAnimationFrame((()=>t(void 0)))}))})(r,o)})),fe=async e=>oe.has(e)?oe.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(ie))for(const[i,a]of Object.entries(ae)){const s=`marp-${o}transition${a}-${e}`;n.push(ue(s).then((e=>{t[i]=t[i]||{},t[i][r]=e?{...e,name:s}:void 0})))}return Promise.all(n).then((()=>t))})(e).then((t=>(oe.set(e,t),t))),me=e=>Object.values(e).flatMap(Object.values).every((e=>!e)),ge=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[ce]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[se("direction")]="reverse"),e}})();return!o&&n?ge(e,{type:t,backward:!1}):o||{[ce]:"__bespoke_marp_transition_no_animation__"}},pe=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch(e){}},ve="_tSId",he="_tA",ye="bespoke-marp-transition-warming-up",be=window.matchMedia("(prefers-reduced-motion: reduce)"),we="__bespoke_marp_transition_reduced_outgoing__",xe="__bespoke_marp_transition_reduced_incoming__",ke={forward:{both:void 0,incoming:{name:xe},outgoing:{name:we}},backward:{both:void 0,incoming:{name:xe},outgoing:{name:we}}},$e=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{const t=[...new Set(e).values()];return Promise.all(t.map((e=>fe(e)))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap((e=>[e.dataset.transition,e.dataset.transitionBack].flatMap((e=>{const t=pe(e);return[null==t?void 0:t.name,(null==t?void 0:t.builtinFallback)?`__builtin__${t.name}`:void 0]})).filter((e=>!!e))))).then((()=>{document.querySelectorAll("style").forEach((e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,(e=>e.slice(0,-1)+"!important"+e.slice(-1)))}))}));const r=(n,{back:r,cond:o})=>i=>{var a;const s=t();if(s)return!!i[he]||!("object"!=typeof s||(s.skipTransition(),!i.forSync));if(!o(i))return!0;const l=e.slides[e.slide()],c=()=>{var e;return null!==(e=i.back)&&void 0!==e?e:r},d="data-transition"+(c()?"-back":""),u=l.querySelector(`section[${d}]`);if(!u)return!0;const f=pe(null!==(a=u.getAttribute(d))&&void 0!==a?a:void 0);return!f||((async(e,{builtinFallback:t=!0}={})=>{let n=await fe(e);if(me(n)){if(!t)return;return n=await fe(`__builtin__${e}`),me(n)?void 0:n}return n})(f.name,{builtinFallback:f.builtinFallback}).then((e=>{if(!e){t(!0);try{n(i)}finally{t(!1)}return}let r=e;be.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=ke);const o=document.getElementById(ve);o&&o.remove();const a=document.createElement("style");a.id=ve,document.head.appendChild(a),((e,t)=>{const n=[`:root{${le("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{var n,o,i;const a=(null===(n=e[t].both)||void 0===n?void 0:n.defaultDuration)||(null===(o=e[t].outgoing)||void 0===o?void 0:o.defaultDuration)||(null===(i=e[t].incoming)||void 0===i?void 0:i.defaultDuration);return"forward"===t?a:a||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${de}:${o};}`);const i=e=>Object.entries(e).map((([e,t])=>`${e}:${t};`)).join("");return n.push(`::view-transition-old(root){${i(ge(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${i(ge(e,{...t,type:"incoming"}))}}`),n})(r,{backward:c(),duration:f.duration}).forEach((e=>{var t;return null===(t=a.sheet)||void 0===t?void 0:t.insertRule(e)}));const s=document.documentElement.classList;s.add(ye);let l=!1;const d=()=>{l||(n(i),l=!0,s.remove(ye))},u=()=>{t(!1),a.remove(),s.remove(ye)};try{t(!0);const e=document.startViewTransition(d);t(e),e.finished.finally(u)}catch(e){console.error(e),d(),u()}})),!1)};e.on("prev",r((t=>e.prev({...t,[he]:!0})),{back:!0,cond:e=>{var t;return e.index>0&&!((null===(t=e.fragment)||void 0===t||t)&&n.fragmentIndex>0)}})),e.on("next",r((t=>e.next({...t,[he]:!0})),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout((()=>{e.on("slide",r((t=>e.slide(t.index,{...t,[he]:!0})),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))}),0),e.on("fragment",(e=>{n=e}))};let Ee;const Le=()=>(void 0===Ee&&(Ee="wakeLock"in navigator&&navigator.wakeLock),Ee),Se=async()=>{const e=Le();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Pe=async()=>{if(!Le())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&Se()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await Se(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=f("view");r.dataset.bespokeView=e===a||e===i?e:""})();const t=(e=>{const t=f(e);return m({[e]:void 0}),t})("sync")||void 0;n.from(e,((...e)=>{const t=s.findIndex((e=>u()===e));return e.map((([e,n])=>e[t]&&n)).filter((e=>e))})([[1,1,0],G({key:t})],[[1,1,1],W(e)],[[1,1,0],_],[[1,1,1],b],[[1,0,0],S()],[[1,1,1],T],[[1,1,1],z({history:!1})],[[1,1,0],I()],[[1,1,0],E],[[1,0,0],J],[[1,1,0],re()],[[1,0,0],M()],[[1,0,0],$e],[[1,1,1],w],[[1,1,0],Pe]))})()}();</script></body></html>
