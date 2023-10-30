@@ -56,4 +56,12 @@ For each workspace:
 3. Make sure **Allow destroy plans** is enabled
 4. Click **Queue destroy plan**
 
+### Veryify you are not accumulating costs
+If you manually removed resources from AWS or want to ensure the Terraform Automation destroyed any cost-accumulating resources, you can monitor the **Cost Explorer** in AWS
+1. Under the account menu in the upper right, navigate to **Billing Dashboard**
+2. Select **Cost explorer** in the sidebar under Cost Mangement
+
+Here you will find a cost summary. If you have other AWS services, but want to ensure the resources from this course are not accumulating costs use the **Report Parameters** on the right to group by the **Service** dimension.
+
+
 [fem]: https://frontendmasters.com/courses/enterprise-devops
